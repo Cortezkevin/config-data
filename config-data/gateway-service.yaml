@@ -13,15 +13,17 @@ eureka:
 spring:
   cloud:
     gateway:
-      discovery:
-        locator:
-          enabled: true # habilitamos el acceso a los registros de servicios del servidor eureka
-      routes:
-      - id: client
-        uri: lb://client # usamos el balanceo de carga , en este caso haciendo uso de las instancias registradas en eureka usando el nombre de los servicios registrados
-        predicates: # condiciones para acceder a la ruta
-        - Path=/client/**
-      - id: product
-        uri: lb://product
-        predicates:
-        - Path=/product/**
+      server:
+        webflux:
+          discovery:
+            locator:
+              enabled: true
+          routes:
+          - id: client
+            uri: lb://client
+            predicates:
+            - Path=/client/**
+          - id: product
+            uri: lb://product
+            predicates:
+            - Path=/product/**

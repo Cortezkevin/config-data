@@ -1,8 +1,8 @@
 server:
-  port: 4002
+  port: 8761
 eureka:
   client:
     registerWithEureka: false # para evitar que la instancia del servidor eureka se registre
     fetchRegistry: false # para evitar que esta instancia obtenga el registro de otras nuevas instancias
     serviceUrl:
-      defaultZone: http://localhost:4002/eureka #${EUREKA_SERVER_ADDRESS:http://localhost:8761/eureka/}
+      defaultZone: http://localhost:8761/eureka #${EUREKA_SERVER_ADDRESS:http://localhost:8761/eureka/}

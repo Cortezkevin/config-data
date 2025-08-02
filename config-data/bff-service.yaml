@@ -10,3 +10,6 @@ eureka:
   instance:
     instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
     prefer-ip-address: true
+ecrypt:
+  secret:
+    key: MySecretKey12345

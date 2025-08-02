@@ -20,10 +20,10 @@ spring:
               enabled: true
           routes:
           - id: client
-            uri: lb://client
+            uri: lb://client-service
             predicates:
             - Path=/client/**
           - id: product
-            uri: lb://product
+            uri: lb://product-service
             predicates:
             - Path=/product/**

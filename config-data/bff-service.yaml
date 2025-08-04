@@ -10,6 +10,8 @@ spring:
         jwt:
           issuer-uri: http://authservice:8080
 
+auth-issuer-ui: http://authservice:8080
+
 eureka:
   client:
     registerWithEureka: true

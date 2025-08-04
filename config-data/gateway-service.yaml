@@ -24,11 +24,17 @@ spring:
             uri: lb://client-service
             predicates:
             - Path=/client/**
+            filters:
+            - StripPrefix=1
           - id: bff
             uri: lb://bff-service
             predicates:
             - Path=/bff/**
+            filters:
+            - StripPrefix=1
           - id: product
             uri: lb://product-service
             predicates:
             - Path=/product/**
+            filters:
+            - StripPrefix=1

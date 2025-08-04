@@ -3,15 +3,15 @@ server:
 
 spring:
   zipkin:
-    base-url: ${ZIPKIN_SERVER_ADDRESS:-http://localhost:9411}
+    base-url: ${ZIPKIN_SERVER_ADDRESS:http://localhost:9411}
   security:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: ${AUTH_SERVICE_PATH:-http://localhost:8080}
+          issuer-uri: ${AUTH_SERVICE_PATH:http://localhost:8080}
 
-auth-issuer-ui: ${AUTH_SERVICE_PATH:-http://localhost:8080}
-mongo-server-uri: ${MONGO_SERVER_ADDRESS:-mongodb://localhost:27017}
+auth-issuer-ui: ${AUTH_SERVICE_PATH:http://localhost:8080}
+mongo-server-uri: ${MONGO_SERVER_ADDRESS:mongodb://localhost:27017}
 
 eureka:
   client:

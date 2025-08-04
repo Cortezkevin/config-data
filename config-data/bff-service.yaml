@@ -2,6 +2,8 @@ server:
   port: ${PORT:${SERVER_PORT:0}}
 
 spring:
+  zipkin:
+    base-url: http://localhost:9411
   security:
     oauth2:
       resourceserver:
@@ -21,3 +23,9 @@ eureka:
 encrypt:
   secret:
     key: MySecretKey12345
+
+
+management:
+  tracing:
+    sampling:
+      probability: 1
